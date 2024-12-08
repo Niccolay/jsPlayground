@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./fonts/CascadiaCode.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'CustomFont';
+    /*background-color: #191a2a;*/
+}
+.monaco-editor {
+    box-shadow: none !important;
+    font-family: inherit !important;
+    color: #808080;
+}
+
+.monaco-editor .comment {
+    color: #808080;
+}
+
+.dragab {
+    -webkit-app-region: drag;
+}
+
+.nodrag {
+    -webkit-app-region: no-drag;
+}
