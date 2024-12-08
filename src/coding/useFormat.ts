@@ -14,11 +14,11 @@ export const useFormat = (code: string) => {
                 if (typeof res === 'object' && res !== null) {
                     return JSON.stringify(res, null, 4)
                 }
-    
+
                 if (typeof res === 'string') {
                     return `'${res}'`
                 }
-    
+
                 return res
             } catch (error) {
                 return `Error: ${error instanceof Error ? error.message : 'Código inválido'}`

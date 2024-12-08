@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { Codi } from './coding/code'
 import { Output } from './coding/codeOutput'
 import { Bar } from './components/topBar'

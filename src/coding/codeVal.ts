@@ -21,7 +21,7 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
             return
         }
         eval(value)
-        console.log(value)
+        console.log(eval(value))
         setCode(value)
 
     } catch {
