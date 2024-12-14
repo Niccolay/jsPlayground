@@ -5,10 +5,11 @@ import { Bar } from './components/topBar'
 
 function App() {
 	const [code, setCode] = useState('')
+	const [tron, setTron] = useState(true)
 	return (
 		<>
 			<div className='bg-[#191a2a] h-screen overflow-hidden'>
-				<Bar />
+				<Bar setTron = {setTron} tron = {tron}/>
 				<div className='flex h-full'>
 					<div className='w-1/2 pl-[80px]  mt-[30px]'>
 						<Codi setCode={setCode}/>

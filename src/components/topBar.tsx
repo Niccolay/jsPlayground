@@ -5,6 +5,7 @@ import { PiRectangle } from "react-icons/pi";
 import { IconContext } from "react-icons";
 import { LeftBar } from "./leftBar";
 import { handleWindowAction } from "./elctronBridge";
+import { setTrone } from "../type";
 
 
 export const TopBar = () => {
@@ -62,12 +63,12 @@ export const TopBar = () => {
     )
 }
 
-export const Bar = () => {
+export const Bar = ({setTron, tron}: setTrone) => {
 
     return (
         <>
             <TopBar />
-            <LeftBar />
+            <LeftBar setTron={setTron} tron = {tron}/>
         </>
     )
 }

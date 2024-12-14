@@ -5,21 +5,19 @@ export const useFormat = (code: string) => {
 
         const outProcess = (code: string) => {
             try {
-                const res = eval(code)
-                
-                if (Array.isArray(res)) {
-                    return `[${res.join(', ')}]`
+                if (Array.isArray(code)) {
+                    return `[${code.join(', ')}]`
                 }
 
-                if (typeof res === 'object' && res !== null) {
-                    return JSON.stringify(res, null, 4)
+                if (typeof code === 'object' && code !== null) {
+                    return JSON.stringify(code, null, 4)
                 }
 
-                if (typeof res === 'string') {
-                    return `'${res}'`
+                if (typeof code === 'string' && code !== '') {
+                    return `'${code}'`
                 }
 
-                return res
+                return code
             } catch (error) {
                 return `Error: ${error instanceof Error ? error.message : 'Código inválido'}`
             }
