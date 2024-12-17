@@ -23,9 +23,9 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
 
             return
         } */
-        //eval(value)
+        eval(value)
         //console.log(eval(value))
-        setCode(eval(value))
+        setCode(value)
 
     } catch (error) {
         debounceTimeout.current = setTimeout(() => {  
