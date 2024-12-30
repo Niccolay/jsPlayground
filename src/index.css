@@ -11,6 +11,8 @@
 * {
     font-family: 'CustomFont';
     /*background-color: #191a2a;*/
+    scrollbar-color: #2d2f3f #191a2a;
+    scrollbar-width: thin;
 }
 .monaco-editor {
     box-shadow: none !important;
@@ -28,4 +30,9 @@
 
 .nodrag {
     -webkit-app-region: no-drag;
+}
+
+/**/
+.brackets {
+    color: #d19a66;
 }

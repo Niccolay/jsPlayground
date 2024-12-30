@@ -1,9 +1,9 @@
 import Editor, { BeforeMount} from '@monaco-editor/react'
 //import monaco from '@monaco-editor/react'
-import {  useRef } from 'react'
-import { monarch } from './tokens'
-import { handleCode } from './codeVal'
-import { Timer, setVal } from '../type'
+//import {  useRef } from 'react'
+import { monarch } from './editorOptions/tokens'
+//import { handleCode } from './codeVal'
+import { setVal } from '../type'
 
 
 
@@ -11,7 +11,7 @@ import { Timer, setVal } from '../type'
 
 export const Codi = ({setCode}: setVal) => {
 
-    const debounceTimeout = useRef<Timer>(null)
+    
 
     const handleBeforeMount: BeforeMount = (monaco) => {
         monarch(monaco)
@@ -21,7 +21,8 @@ export const Codi = ({setCode}: setVal) => {
         
     } */
     function handleEditor(value: string) {
-        handleCode(value, debounceTimeout, setCode)
+        setCode(value)
+        
     }
     
 

@@ -1,4 +1,7 @@
-import { useEffect } from "react"
+//import { useEffect } from "react"
+import { useEffect, useRef } from "react"
+import { handleCode } from "./codeVal"
+import { Timer } from "../type"
 //import { useFormat } from "./useFormat"
 
 interface codeType {
@@ -12,10 +15,15 @@ declare global {
     }
 }
 
+
 export const Output = ({code}: codeType) => {
     //useFormat(code)
 
-    const runNode = async (code: string) => {
+    //const debounceTimeout = useRef<Timer>(null)
+    
+
+    
+    /* const runNode = async (code: string) => {
         try {
             const result = await window.electronAPI.executeCode(code)
             return result
@@ -33,10 +41,15 @@ export const Output = ({code}: codeType) => {
             }
             run()
         }
-    }, [code])
+    }, [code]) */
+    
+    //handleCode(code, debounceTimeout)
+    /* useEffect(() => {
+    }, [code]) */
+
     return (
         <>
-            <div id="output" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'CustomFont', padding: '10px', color: 'white' }}>
+            <div id="output" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', fontFamily: 'CustomFont', color: 'white' }}>{console.log('render')}
             </div>
         </>
     )

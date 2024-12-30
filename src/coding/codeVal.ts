@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import { MutableRefObject } from 'react';
 import { Timer } from '../type'
 
 
@@ -11,25 +11,39 @@ import { Timer } from '../type'
     }
 } */
 
-export function handleCode(value: string, debounceTimeout: MutableRefObject<Timer>, setCode: Dispatch<SetStateAction<string>>) {
+export function handleCode(value: string, debounceTimeout: MutableRefObject<Timer>): Promise<string> {
     if (debounceTimeout.current) {
         clearTimeout(debounceTimeout.current)
     }
 
-    try {
+    return new Promise(resolve => {
+        try {
+            const result = eval(value)
+            resolve(result)
+        } catch (error) {
+            debounceTimeout.current = setTimeout(() => {
+                resolve(`Error: ${error instanceof Error ? error.message : 'Código inválido'}`)
+            }, 1000)
+        }
+    })
+
+    /* try {
         /* const logs = captureLogs(setCode)
         if (logs !== undefined) {
             setCode(logs)
 
             return
-        } */
+        } 
         eval(value)
+        //console.log(value)
+        return eval(value)
         //console.log(eval(value))
-        setCode(value)
+        //setCode(eval(value))
 
-    } catch (error) {
+    }  /* catch (error) {
         debounceTimeout.current = setTimeout(() => {  
-            setCode(`Error: ${error instanceof Error ? error.message : 'Código inválido'} */`)
+            console.log('nel')
+            return `Error: ${error instanceof Error ? error.message : 'Código inválido'} `
         }, 1000);
-    }
+    } */
 }
