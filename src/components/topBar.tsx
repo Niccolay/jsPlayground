@@ -10,28 +10,8 @@ import { setTrone } from "../type";
 
 export const TopBar = () => {
 
-    /* useEffect(() => {
-        if (window.electronAPI?.windowAction) {
-          
-          console.error(window.electronAPI)
-        } else {
-          console.error('Electron API no está disponible en React');
-        }
-    }, []); */
-    /* const handleWindowAction = (action) => {
-        //console.error(window.electronAPI)
-        if (window.electronAPI?.windowAction) {
-            window.electronAPI.windowAction(action)
-            console.error(`Enviando acción: ${action}`);
-        } else {
-            console.error('electron api no esta disponible')
-        }
-    } */
     const { closeFunc, minimFunc, maximFunc } = handleWindowAction()
-      
-    
-
-
+        
     return (
         <>
             <div className="dragab h-[40px] min-h-[40px] w-full bg-[#1e2030] flex justify-between border-b-[1px] border-[#828bb8] relative z-10">

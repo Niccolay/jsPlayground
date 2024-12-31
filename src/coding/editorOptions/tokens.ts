@@ -6,19 +6,19 @@ const colore: BeforeMount = (monaco) => {
         inherit: true,
         rules: [
             
-            { token: 'limiters', foreground: '#d19a66' }, // Limitadores
-            // Colores para palabras reservadas
-            { token: 'keyword.false', foreground: '#d19a66' }, // false
-            { token: 'keyword.true', foreground: '#d19a66' }, // true
-            { token: 'keyword.null', foreground: '#d19a66' }, // null
-            { token: 'keyword.undefined', foreground: '#d19a66' }, // undefined
+            { token: 'limiters', foreground: '#d19a66' },
+
+            { token: 'keyword.false', foreground: '#d19a66' },
+            { token: 'keyword.true', foreground: '#d19a66' },
+            { token: 'keyword.null', foreground: '#d19a66' },
+            { token: 'keyword.undefined', foreground: '#d19a66' }, 
             
-            // Colores para tipos primitivos
-            { token: 'keyword.number', foreground: '#98c379' }, // number
-            { token: 'keyword.string', foreground: '#98c379' }, // string
-            { token: 'keyword.boolean', foreground: '#e06c75' }, // boolean
-            { token: 'keyword.object', foreground: '#e5c07b' }, // object
-            { token: 'keyword.array', foreground: '#61afef' }, // array
+
+            { token: 'keyword.number', foreground: '#98c379' },
+            { token: 'keyword.string', foreground: '#98c379' }, 
+            { token: 'keyword.boolean', foreground: '#e06c75' }, 
+            { token: 'keyword.object', foreground: '#e5c07b' }, 
+            { token: 'keyword.array', foreground: '#61afef' }, 
             
             { token: 'keyword', foreground: '#c678dd' },
             { token: 'typeKeyword', foreground: '#e5c07b' },
@@ -36,10 +36,10 @@ const colore: BeforeMount = (monaco) => {
             { token: "object-property", foreground: "#e06c75"},
             { token: "comment", foreground: "#7f848e", fontStyle: "italic" },
 
-            { token: "braces", foreground: "#e06c75" }, // Para llaves {}
-            { token: "delimiter.bracket", foreground: "#d19a66" }, // Para delimitadores
-            { token: "brackets", foreground: "#d19a66" }, // Para corchetes []
-            { token: "parentheses", foreground: "#d19a66" }, // Para paréntesis ()
+            { token: "braces", foreground: "#e06c75" },
+            { token: "delimiter.bracket", foreground: "#d19a66" }, 
+            { token: "brackets", foreground: "#d19a66" }, 
+            { token: "parentheses", foreground: "#d19a66" }, 
             
         ],
         colors: {
@@ -59,12 +59,10 @@ export const monarch: BeforeMount = (monaco) => {
             //limitadores
             [/\{|\}/, 'limiters'],
             [/[{}]/, 'delimiter.bracket'],
-            [/\{|\}/, "braces"], // Llaves {}
-            [/\[|\]/, "brackets"], // Corchetes []
-            [/\(|\)/, "parentheses"], // Paréntesis ()
-            /* [/\{/, { token: 'delimiter.brace', next: '@brace1' }],
-            [/\[/, { token: 'delimiter.square', next: '@square1' }],
-            [/\(/, { token: 'delimiter.parenthesis', next: '@parenthesis1' }], */
+            [/\{|\}/, "braces"],
+            [/\[|\]/, "brackets"],
+            [/\(|\)/, "parentheses"],
+
             
             [/\b(false|true|null|undefined)\b/, 'keyword.false'],
             [/\b(number|string|boolean|object|array)\b/, 'keyword.number'],
@@ -74,10 +72,6 @@ export const monarch: BeforeMount = (monaco) => {
             [/[a-z_$][\w$]*(?=\s*\()/, 'function-name'],
             [/[A-Z_$][\w$]*(?=\s*\()/, 'class-name'],
 
-
-
-
-            
             [/[a-zA-Z_$][\w$]*(?=\s*=\s*\(\s*[^)]*\)\s*=>)/, 'function-name'],
             [/\(\s*([^)"'\d]*)\)/, 'parameters'],
             [/([a-zA-Z_$][\w$]*)(?=\s*[:]\s*)/, 'object-property'],

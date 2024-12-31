@@ -15,6 +15,7 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
     if (debounceTimeout.current) {
         clearTimeout(debounceTimeout.current)
     }
+    
 
     return new Promise(resolve => {
         try {
@@ -26,24 +27,4 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
             }, 1000)
         }
     })
-
-    /* try {
-        /* const logs = captureLogs(setCode)
-        if (logs !== undefined) {
-            setCode(logs)
-
-            return
-        } 
-        eval(value)
-        //console.log(value)
-        return eval(value)
-        //console.log(eval(value))
-        //setCode(eval(value))
-
-    }  /* catch (error) {
-        debounceTimeout.current = setTimeout(() => {  
-            console.log('nel')
-            return `Error: ${error instanceof Error ? error.message : 'Código inválido'} `
-        }, 1000);
-    } */
 }
