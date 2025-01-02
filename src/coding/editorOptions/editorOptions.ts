@@ -1,4 +1,7 @@
-export const params = {
+import { EditorProps } from '@monaco-editor/react';
+
+
+export const params: EditorProps['options'] = {
     minimap: {
         enabled: false
     },
