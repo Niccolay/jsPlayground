@@ -5,17 +5,17 @@ export const params: EditorProps['options'] = {
     minimap: {
         enabled: false
     },
-    suggestOnTriggerCharacters: false,
-    parameterHints: {
+    /* suggestOnTriggerCharacters: false, */
+    /* parameterHints: {
         enabled: false
-    },
-    suggest: {
+    }, */
+    /* suggest: {
         showWords: false,
         showFunctions: false,
         showKeywords: false
-    },
-    quickSuggestions: false,
-    wordBasedSuggestions: 'off',
+    }, */
+    /* quickSuggestions: false, */
+    /* wordBasedSuggestions: 'off', */
     cursorBlinking: 'expand',
     scrollBeyondLastLine: false,
     smoothScrolling: true,

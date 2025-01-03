@@ -1,5 +1,7 @@
 import { MutableRefObject } from 'react';
 import { Timer } from '../type'
+import { format } from '../hooks/useFormat';
+import { evalTypeCode } from '../hooks/evalTypeCode';
 
 
 /* function captureLogs(setCode) {
@@ -11,7 +13,7 @@ import { Timer } from '../type'
     }
 } */
 
-export function handleCode(value: string, debounceTimeout: MutableRefObject<Timer>): Promise<string> {
+export function handleCode(value: string, debounceTimeout: MutableRefObject<Timer>, lang: string): Promise<string> {
     if (debounceTimeout.current) {
         clearTimeout(debounceTimeout.current)
     }
@@ -19,11 +21,13 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
 
     return new Promise(resolve => {
         try {
-            const result = eval(value)
-            resolve(result)
+            const result = evalTypeCode(lang, value)
+            const formatted = format(result)
+            console.log(formatted, 'esta pasando')
+            resolve(formatted)
         } catch (error) {
             debounceTimeout.current = setTimeout(() => {
-                resolve(`Error: ${error instanceof Error ? error.message : 'Código inválido'}`)
+                resolve(`Error: ${error instanceof Error ? error.toString() : 'Código inválido'}`)
             }, 1000)
         }
     })

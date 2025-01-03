@@ -2,11 +2,15 @@ import { Dispatch, SetStateAction } from "react"
 
 export type Timer = number | null
 
+export type IsLang = boolean
+export type SetLang = Dispatch<SetStateAction<string>>
+
 export interface setVal {
     setCode: Dispatch<SetStateAction<string>>
+    lang: string
 }
 
-export interface setTrone {
-    tron: boolean
-    setTron: Dispatch<SetStateAction<boolean>>
+export interface Lang {
+    lang: string
+    setLang: Dispatch<SetStateAction<string>>
 }

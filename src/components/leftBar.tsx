@@ -1,46 +1,42 @@
-import { IconContext } from "react-icons";
-import { CiStop1 } from "react-icons/ci";
-import { CiPlay1 } from "react-icons/ci";
-import { IoLogoElectron } from "react-icons/io5";
-import { FaRegWindowMaximize } from "react-icons/fa";
-import { setTrone } from "../type";
-import {  useEffect } from "react";
+//import { IconContext } from "react-icons";
+//import { CiPlay1 } from "react-icons/ci";
+//import { FaRegWindowMaximize } from "react-icons/fa";
+import { Lang } from "../type";
+import { LangMenu } from "./langModal";
+import { useState, useRef, useEffect } from "react";
 
 
-export const LeftBar = ({setTron, tron}: setTrone) => {
-    
+export const LeftBar = ({setLang, lang}: Lang) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null)
+
+    const clickOutside = (e: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+            setIsOpen(false)
+        }
+    }   
     useEffect(() => {
-        const handleKey = (event: KeyboardEvent) => {
-            //event.preventDefault()
-            if (event.key === 'F9') {
-                setTron(prev => !prev)
-            }
-        }
-        window.addEventListener('keydown', handleKey)
-        return () => {
-            window.removeEventListener('keydown', handleKey)
-        }
-    }, [setTron])
+        document.addEventListener('click', clickOutside)
+        return () => document.removeEventListener('click', clickOutside)
+    })
 
     return (
         <>
-            <div className="w-[35px] h-[100%] flex bg-[#1e2030] min-w-[35px] absolute top-0 z-0">
+            <div className="w-[35px] h-[100%] flex bg-[#1e2030] min-w-[35px] absolute top-0 z-[11]">
                 <div className=" w-full mt-[42px]  flex flex-col">
                     <div className="py-[15px] hover:bg-[#2e324e] flex justify-center">
-                        <IconContext.Provider value={{color: '#b4c2f0', size: '20px'}}>
-                            <CiStop1 />
-                        </IconContext.Provider>
+                        <img src="/icons/stop.svg" alt="" />
                     </div>
                     <div className="py-[15px] hover:bg-[#2e324e] flex justify-center">
-                        <IconContext.Provider value={{color: '#b4c2f0', size: '20px'}}>
-                            <CiPlay1 />
-                        </IconContext.Provider>
+                        
+                        <img src="/icons/play.svg" alt="" />
                     </div>
-                    <div className="py-[15px] hover:bg-[#2e324e] flex justify-center" onClick={() => setTron(!tron)}>
-                        <IconContext.Provider value={{color: '#b4c2f0', size: '20px'}}>
-                            {tron ? <IoLogoElectron /> : <FaRegWindowMaximize />}
-                        </IconContext.Provider>
+                    <div ref={menuRef}>
+                        <div className="py-[15px] hover:bg-[#2e324e] flex justify-center" onClick={() => setIsOpen(prev => !prev)}>
+                            <img src={`/icons/${lang}.svg`} />
+                        </div>
                     </div>
+                        <LangMenu  isOpen = {isOpen} setIsOpen={setIsOpen} setLang = {setLang}/>
                 </div>
             </div>
         </>

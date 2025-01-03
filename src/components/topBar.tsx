@@ -5,7 +5,7 @@ import { PiRectangle } from "react-icons/pi";
 import { IconContext } from "react-icons";
 import { LeftBar } from "./leftBar";
 import { handleWindowAction } from "./elctronBridge";
-import { setTrone } from "../type";
+import { Lang } from "../type";
 
 
 export const TopBar = () => {
@@ -14,7 +14,7 @@ export const TopBar = () => {
         
     return (
         <>
-            <div className="dragab h-[40px] min-h-[40px] w-full bg-[#1e2030] flex justify-between border-b-[1px] border-[#828bb8] relative z-10">
+            <div className="dragab h-[40px] min-h-[40px] w-full bg-[#1e2030] flex justify-between border-b-[1px] border-[#828bb8] relative z-[12]">
                 <div className="pt-[10px] pl-3 pr-3  hover:bg-[#2e324e] nodrag" style={{animationName: 'delay', transition: 'background-color 0.23s ease-in-out'}}>
                     <IconContext.Provider value={{ color: '#b4c2f0', size: '20px' }}>
                         <RxHamburgerMenu />
@@ -43,12 +43,12 @@ export const TopBar = () => {
     )
 }
 
-export const Bar = ({setTron, tron}: setTrone) => {
+export const Bar = ({setLang, lang}: Lang) => {
 
     return (
         <>
             <TopBar />
-            <LeftBar setTron={setTron} tron = {tron}/>
+            <LeftBar setLang={setLang} lang = {lang}/>
         </>
     )
 }
