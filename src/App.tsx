@@ -7,7 +7,7 @@ import { useDrag } from './hooks/lineDrag'
 
 function App() {
 	const [code, setCode] = useState('')
-	const [lang, setLang] = useState('javascript')
+	const [lang, setLang] = useState('typescript')
 
 	const { leftWidth, handleMouseDown } = useDrag()
 

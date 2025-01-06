@@ -5,17 +5,17 @@ export const params: EditorProps['options'] = {
     minimap: {
         enabled: false
     },
-    /* suggestOnTriggerCharacters: false, */
-    /* parameterHints: {
-        enabled: false
-    }, */
-    /* suggest: {
-        showWords: false,
-        showFunctions: false,
-        showKeywords: false
-    }, */
-    /* quickSuggestions: false, */
-    /* wordBasedSuggestions: 'off', */
+    // suggestOnTriggerCharacters: false,
+    // parameterHints: {
+    //     enabled: false
+    // },
+    // suggest: {
+    //     showWords: false,
+    //     showFunctions: false,
+    //     showKeywords: false
+    // },
+    // quickSuggestions: false,
+    // wordBasedSuggestions: 'off',
     cursorBlinking: 'expand',
     scrollBeyondLastLine: false,
     smoothScrolling: true,
@@ -34,7 +34,7 @@ export const params: EditorProps['options'] = {
         enabled: false
     },
     fontFamily: 'CustomFont',
-    fontSize: 16,
+    fontSize: 14,
     fontLigatures: true,
     lineNumbers: 'off'
 }
