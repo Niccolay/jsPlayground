@@ -14,15 +14,7 @@
     scrollbar-color: #2d2f3f #191a2a;
     scrollbar-width: thin;
 }
-.monaco-editor {
-    box-shadow: none !important;
-    font-family: inherit !important;
-    color: #808080;
-}
 
-.monaco-editor .comment {
-    color: #808080;
-}
 
 .dragab {
     -webkit-app-region: drag;
@@ -32,7 +24,3 @@
     -webkit-app-region: no-drag;
 }
 
-/**/
-.brackets {
-    color: #d19a66;
-}

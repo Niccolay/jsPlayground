@@ -15,7 +15,7 @@ export const params: EditorProps['options'] = {
     //     showKeywords: false
     // },
     // quickSuggestions: false,
-    // wordBasedSuggestions: 'off',
+    wordBasedSuggestions: 'off',
     cursorBlinking: 'expand',
     scrollBeyondLastLine: false,
     smoothScrolling: true,
@@ -27,8 +27,8 @@ export const params: EditorProps['options'] = {
         useShadows: false
     },
     wordWrap: 'on',
-    lineNumbersMinChars: 20,
-    overviewRulerBorder: false,
+    lineNumbersMinChars: 0,
+    overviewRulerBorder: true,
     overviewRulerLanes: 0,
     hover: {
         enabled: false
@@ -36,5 +36,8 @@ export const params: EditorProps['options'] = {
     fontFamily: 'CustomFont',
     fontSize: 14,
     fontLigatures: true,
-    lineNumbers: 'off'
+    lineNumbers: 'on',
+    glyphMargin: false,
+    folding: false,    
+    tabSize: 4,
 }

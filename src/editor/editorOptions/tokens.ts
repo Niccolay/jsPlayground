@@ -13,9 +13,10 @@ const colore: BeforeMount = (monaco) => {
         inherit: true,
         rules: [
             { token: 'keyword', foreground: '#c678dd' },
-            {token: "comment", foreground: "#7f848e", fontStyle: "italic" },
-            //{ token: 'keyword.false', foreground: '#d19a66' },
-            ...OneDarkPro.rules,
+            { token: "parameters", foreground: "#e06c75"},
+            { token: "comment", foreground: "#7f848e", fontStyle: "italic" },
+            { token: 'keyword.false', foreground: '#d19a66' },
+            //...OneDarkPro.rules,
             // { token: 'limiters', foreground: '#d19a66' },
 
             // { token: 'keyword.true', foreground: '#d19a66' },
@@ -23,14 +24,14 @@ const colore: BeforeMount = (monaco) => {
             // { token: 'keyword.undefined', foreground: '#d19a66' }, 
             
 
-            //{ token: 'keyword.number', foreground: '#e5c07b' },
+            { token: 'keyword.number', foreground: '#e5c07b' },
             // { token: 'keyword.string', foreground: '#98c379' }, 
             // { token: 'keyword.boolean', foreground: '#e06c75' }, 
             // { token: 'keyword.object', foreground: '#e5c07b' }, 
             // { token: 'keyword.array', foreground: '#61afef' }, 
             
             // { token: 'typeKeyword', foreground: '#e5c07b' },
-            // { token: 'string', foreground: '#98c379' },
+            { token: 'string', foreground: '#98c379' },
             // { token: "key-access", foreground: "#e06c75" },
             { token: 'function-name', foreground: '#61afef' },
             // { token: 'string.escape', foreground: '#56b6c2', fontStyle: 'italic' },
@@ -39,9 +40,8 @@ const colore: BeforeMount = (monaco) => {
             { token: "operator", foreground: '#56b6c2'},
             // { token: "arrow-function", foreground: '#c678dd'},
             // { token: "ternary-operator", foreground: '#c678dd'},
-            // { token: "parameters", foreground: "#e06c75"},
             { token: "class-name", foreground: "#e5c07b"},
-            // { token: "object-property", foreground: "#e06c75"},
+            { token: "object-property", foreground: "#e06c75"},
 
             { token: "braces", foreground: "#e06c75" },
             // { token: "delimiter.bracket", foreground: "#d19a66" }, 
@@ -73,8 +73,9 @@ export const monarch = ({monaco, lang}: Token) => {
             [/\(|\)/, "parentheses"], */
 
             
-            //[/\b(false|true|null|undefined)\b/, 'keyword.false'],
-            //[/\b(number|string|boolean|object|array)\b/, 'keyword.number'],
+            [/\b(false|true|null|undefined)\b/, 'keyword.false'],
+            //[/\(\s*([^)"'\d]*)\)/, 'parameters'],
+            [/\b(number|string|boolean|object|array)\b/, 'keyword.number'],
             [/<=|>=|==|!=|===|!==|\+|-|\*\*|\*|\|%|\+\+|--|<<|<|>|>>|>>>|&|\||\^|!|~|&&|\|\||:|=|\+=|-=|\*=|\*\*=|\/=|%=|<<=|>>=|>>>=|&=|\|=|\^=|@|\?\?/, 'operator'],
             [/(\/\/.*$)/, 'comment'],
             [/(\/\*[\s\S]*?\*\/)/, 'comment'],
@@ -83,9 +84,8 @@ export const monarch = ({monaco, lang}: Token) => {
             [/[A-Z_$][\w$]*(?=\s*\()/, 'class-name'],
             
             [/[a-zA-Z_$][\w$]*(?=\s*=\s*\(\s*[^)]*\)\s*=>)/, 'function-name'],
-            //[/\(\s*([^)"'\d]*)\)/, 'parameters'],
-            //[/([a-zA-Z_$][\w$]*)(?=\s*[:]\s*)/, 'object-property'],
-            [/\b(break|case|catch|class|continue|const|constructor|debugger|default|delete|do|else|export|extends|false|finally|for|from|function|get|if|import|in|instanceof|let|new|null|return|set|super|switch|symbol|this|throw|true|try|typeof|undefined|var|void|while|with|yield|async|await|of)\b/, 'keyword'],
+            [/([a-zA-Z_$][\w$]*)(?=\s*[:]\s*)/, 'object-property'],
+            [/\b(break|case|catch|class|continue|const|constructor|debugger|default|delete|do|else|export|extends|finally|for|from|function|get|if|import|in|instanceof|let|new|null|return|set|super|switch|symbol|this|throw|try|typeof|undefined|var|void|while|with|yield|async|await|of|as|interface|type)\b/, 'keyword'],
             [/([a-zA-Z_$][\w$]*)\s*(?=\s*=\s*[^=])/, 'variable'],
             //[/\b(any|boolean|number|object|string|undefined)\b/, 'typeKeyword'],
             [/"/, { token: 'string.quote', bracket: '@open', next: '@string_double' }],
@@ -98,7 +98,6 @@ export const monarch = ({monaco, lang}: Token) => {
             //[/\?/, 'ternary-operator'],
 
         ],
-
         
         string_double: [
             [/[^\\"]+/, 'string'],

@@ -1,12 +1,12 @@
 import { useState} from 'react'
-import { Codi } from './coding/code'
-import { Output } from './coding/codeOutput'
+import { Codi } from './editor/code'
+import { Output } from './editor/codeOutput'
 import { Bar } from './components/topBar'
 import { Layout } from './layout'
 import { useDrag } from './hooks/lineDrag'
 
 function App() {
-	const [code, setCode] = useState('')
+	const [code, setCode] = useState<Array<object>>([])
 	const [lang, setLang] = useState('typescript')
 
 	const { leftWidth, handleMouseDown } = useDrag()

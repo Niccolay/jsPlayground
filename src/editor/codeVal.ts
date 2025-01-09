@@ -23,7 +23,7 @@ export function handleCode(value: string, debounceTimeout: MutableRefObject<Time
         try {
             const result = evalTypeCode(lang, value)
             const formatted = format(result)
-            console.log(formatted, 'esta pasando')
+
             resolve(formatted)
         } catch (error) {
             debounceTimeout.current = setTimeout(() => {

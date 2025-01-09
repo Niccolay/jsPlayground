@@ -1868,7 +1868,7 @@
     "editorHoverWidget.highlightForeground": "#61afef",
     "editorInlayHint.foreground": "#abb2bf",
     "editorInlayHint.background": "#2c313c",
-    "editor.lineHighlightBackground": "#2c313c",
+    "editor.lineHighlightBackground": "#191a2a",
     "editorLineNumber.activeForeground": "#abb2bf",
     "editorGutter.addedBackground": "#109868",
     "editorGutter.deletedBackground": "#9A353D",

@@ -6,7 +6,7 @@ export type IsLang = boolean
 export type SetLang = Dispatch<SetStateAction<string>>
 
 export interface setVal {
-    setCode: Dispatch<SetStateAction<string>>
+    setCode: Dispatch<SetStateAction<Array<object>>>
     lang: string
 }
 

@@ -17,7 +17,7 @@ export const LangMenu = ({isOpen, setIsOpen, setLang}: PropsMenu) => {
   return (
     <div className="relative ml-3">
       <div
-        className={`w-52 origin-top-right rounded-xl border border-white/5 bg-[#252635] p-1 text-sm/6 text-white transition-all duration-300 ease-out ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`w-52 origin-top-right rounded-xl border border-white/5 bg-[#252635] p-1 text-sm/6 text-white transition-all duration-300 ease-out ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 z-0 pointer-events-none'}`}
         style={{ transformOrigin: 'top right' }}
       > 
         <div id="javascript" className="flex justify-between  rounded-lg hover:bg-white/10 px-3" onClick={changeLang}>
