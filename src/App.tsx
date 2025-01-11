@@ -5,8 +5,14 @@ import { Bar } from './components/topBar'
 import { Layout } from './layout'
 import { useDrag } from './hooks/lineDrag'
 
+export interface ArrObj {
+	scape : number
+	code: string
+	line: number
+}
+
 function App() {
-	const [code, setCode] = useState<Array<object>>([])
+	const [code, setCode] = useState<ArrObj[]>([])
 	const [lang, setLang] = useState('typescript')
 
 	const { leftWidth, handleMouseDown } = useDrag()
@@ -17,7 +23,7 @@ function App() {
 			<div className='bg-[#191a2a] h-screen overflow-hidden'>
 				<Bar setLang = {setLang} lang = {lang}/>
 				<div className='flex h-full'>
-					<div className=' pl-[80px]  mt-[30px] pr-[30px]' style={{width: `${leftWidth}%`}}>
+					<div className=' pl-[80px]  mt-[30px] pr-[28px]' style={{width: `${leftWidth}%`}}>
 						<Codi setCode={setCode} lang = {lang}/>
 					</div>
 					<div className='h-full w-[16px] flex  relative z-[20] hover:cursor-e-resize justify-center' onMouseDown={handleMouseDown}>
