@@ -27,14 +27,14 @@ export const Codi = memo(({ setCode, lang }: setVal) => {
             const code = evalTypeCode(lang, value) || ''
             const charArray = splitCode(code)
 
-            if (!charArray) return
-            
+            if (!charArray) return setCode([{scape: 0, code: '', line: 1}])
+            console.log(charArray)
             const newList = charArray.map(char => ({
                 scape: char.scape,
                 code: handleCode(char.code),
                 line: char.line
             }))
-            
+            console.log(newList)
             setCode(newList)
             
 

@@ -14,7 +14,7 @@ export const params: EditorProps['options'] = {
     //     showFunctions: false,
     //     showKeywords: false
     // },
-    // quickSuggestions: false,
+    quickSuggestions: true,
     wordBasedSuggestions: 'off',
     cursorBlinking: 'expand',
     scrollBeyondLastLine: false,
@@ -40,4 +40,5 @@ export const params: EditorProps['options'] = {
     glyphMargin: false,
     folding: false,    
     tabSize: 4,
+    codeLens: true,
 }
