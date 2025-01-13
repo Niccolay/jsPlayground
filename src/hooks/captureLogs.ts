@@ -31,7 +31,6 @@ function captureLogs() {
   console.log = (...args) => {
 
     logStore.push(args.join(' '))
-    //originalLog.apply(console, args)
   }
 
   return () => {
